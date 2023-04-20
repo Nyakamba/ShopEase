@@ -5,11 +5,21 @@ export default class MainContent extends Component {
     pageTitle: "Customers",
     customersCount: 5,
     customers: [
-      { id: 1, name: "Scott", phone: "123-456" },
-      { id: 2, name: "Jones", phone: "982-456" },
-      { id: 3, name: "Allen", phone: "123-982" },
-      { id: 4, name: "James", phone: "552-456" },
-      { id: 5, name: "John", phone: "782-456" },
+      {
+        id: 1,
+        name: "Scott",
+        phone: "123-456",
+        address: { city: "New Delhi" },
+      },
+      { id: 2, name: "Jones", phone: "982-456", address: { city: "New York" } },
+      {
+        id: 3,
+        name: "Allen",
+        phone: "123-982",
+        address: { city: "New Jersy" },
+      },
+      { id: 4, name: "James", phone: null, address: { city: "London" } },
+      { id: 5, name: "John", phone: null, address: { city: "Berlin" } },
     ],
   };
   render() {
@@ -33,15 +43,24 @@ export default class MainContent extends Component {
               <th>#</th>
               <th>Customer Name</th>
               <th>Phone</th>
+              <th>City</th>
             </tr>
           </thead>
           <tbody>
             {this.state.customers.map((cust) => {
               return (
-                <tr>
+                <tr key={cust.id}>
                   <td>{cust.id}</td>
                   <td> {cust.name} </td>
-                  <td> {cust.phone} </td>
+                  <td>
+                    {" "}
+                    {cust.phone ? (
+                      cust.phone
+                    ) : (
+                      <div className="bg-warning p-2 text-center">No Phone</div>
+                    )}{" "}
+                  </td>
+                  <td>{cust.address.city} </td>
                 </tr>
               );
             })}
