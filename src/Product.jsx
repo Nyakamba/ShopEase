@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 export default class Product extends Component {
+  state = {
+    id: this.props.id,
+    productName: this.props.productname,
+    price: this.props.price,
+  };
   render() {
     console.log(this.props);
     return (
