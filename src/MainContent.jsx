@@ -44,11 +44,6 @@ export default class MainContent extends Component {
     ],
   };
 
-  customerNameStyle = (custName) => {
-    if (custName.startsWith("S")) return "green-highlight border-left";
-    else if (custName.startsWith("J")) return "red-highlight border-riight";
-    else return "";
-  };
   render() {
     return (
       <div>
@@ -101,7 +96,7 @@ export default class MainContent extends Component {
           <td>
             <img src={cust.photo} alt="Customer" />
           </td>
-          <td className={this.customerNameStyle(cust.name)}>{cust.name}</td>
+          <td>{cust.name}</td>
           <td>{this.getPhoneToRender(cust.phone)}</td>
           <td>{cust.address.city}</td>
         </tr>
