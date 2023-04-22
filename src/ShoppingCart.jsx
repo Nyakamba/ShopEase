@@ -2,17 +2,26 @@ import React, { Component } from "react";
 import Product from "./Product";
 
 export default class ShoppingCart extends Component {
-  state = {
-    products: [
-      { id: 1, productName: "iPhone", price: 8900, quantity: 0 },
-      { id: 2, productName: "Sony Camera", price: 4500, quantity: 0 },
-      { id: 3, productName: "Samsung QLED TV", price: 7745, quantity: 0 },
-      { id: 4, productName: "iPad Pro", price: 12400, quantity: 0 },
-      { id: 5, productName: "Xbox", price: 7780, quantity: 0 },
-      { id: 6, productName: "Dell Monitor", price: 880, quantity: 0 },
-    ],
-  };
+  //Executes when the component is mounted
+  constructor(props) {
+    console.log("constructor-Shopping Cart");
+    super(props); //calling super class"s constructor
+
+    //initialization of the state
+    this.state = {
+      products: [
+        { id: 1, productName: "iPhone", price: 8900, quantity: 0 },
+        { id: 2, productName: "Sony Camera", price: 4500, quantity: 0 },
+        { id: 3, productName: "Samsung QLED TV", price: 7745, quantity: 0 },
+        { id: 4, productName: "iPad Pro", price: 12400, quantity: 0 },
+        { id: 5, productName: "Xbox", price: 7780, quantity: 0 },
+        { id: 6, productName: "Dell Monitor", price: 880, quantity: 0 },
+      ],
+    };
+  }
+
   render() {
+    console.log("render-Shopping Cart");
     return (
       <div className="container-fluid">
         <h4>Shopping Cart</h4>
@@ -35,8 +44,27 @@ export default class ShoppingCart extends Component {
       </div>
     );
   }
-
   //render ends here
+
+  //Executes after constructor and render method (includes life cycles of child components, if any) of t current component.
+  componentDidMount() {
+    //fetch data from data source
+    console.log("componentDidmount-Shopping Cart");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(
+      "componentDidUpdtae-Shopping Cart",
+      prevProps,
+      prevState,
+      this.props,
+      this.state
+    );
+    if (prevProps.x != this.props.x) {
+      //make http call
+      //it's advisable to make conditionl http call to avoid performance issues from the server orr database
+    }
+  }
   //executes when the user clicks on + button
   handleIncrement = (product, maxValue) => {
     let allProducts = [...this.state.products];
