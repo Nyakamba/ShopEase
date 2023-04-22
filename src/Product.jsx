@@ -4,15 +4,15 @@ export default class Product extends Component {
   constructor(props) {
     super(props);
 
-    console.log("Constructor-Product");
+    //console.log("Constructor-Product");
 
     this.state = {
-      product: this.props.prouct,
+      product: this.props.product,
     };
   }
 
   render() {
-    console.log("render-Product");
+    // console.log("render-Product");
 
     //console.log(this.props);
     return (
@@ -70,14 +70,14 @@ export default class Product extends Component {
   }
 
   componentDidMount() {
-    console.log("componentDidMoun-Product");
+    //console.log("componentDidMoun-Product");
   }
 
   componentDidUpdate() {
-    console.log("componentDidUpdate-Product");
+    //console.log("componentDidUpdate-Product");
   }
 
   componentWillUnmount() {
-    console.log("ComponentWillUnmount-Product");
+    //console.log("ComponentWillUnmount-Product");
   }
 }
