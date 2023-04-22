@@ -11,11 +11,11 @@ export default class ShoppingCart extends Component {
     this.state = {
       products: [
         { id: 1, productName: "iPhone", price: 8900, quantity: 0 },
-        { id: 2, productName: "Sony Camera", price: 4500, quantity: 0 },
-        { id: 3, productName: "Samsung QLED TV", price: 7745, quantity: 0 },
-        { id: 4, productName: "iPad Pro", price: 12400, quantity: 0 },
-        { id: 5, productName: "Xbox", price: 7780, quantity: 0 },
-        { id: 6, productName: "Dell Monitor", price: 880, quantity: 0 },
+        //{ id: 2, productName: "Sony Camera", price: 4500, quantity: 0 },
+        //{ id: 3, productName: "Samsung QLED TV", price: 7745, quantity: 0 },
+        //{ id: 4, productName: "iPad Pro", price: 12400, quantity: 0 },
+        //{ id: 5, productName: "Xbox", price: 7780, quantity: 0 },
+        //{ id: 6, productName: "Dell Monitor", price: 880, quantity: 0 },
       ],
     };
   }
@@ -69,6 +69,13 @@ export default class ShoppingCart extends Component {
   //Executes when the insance of current component is being deleted from memory
   componentWillUnmount() {
     console.log("ComponentWillUnmount-ShoppingCart");
+  }
+
+  componentDidCatch(error, info) {
+    console.log("ComponentDidCatch-ShoppingCart");
+    console.log(error, info);
+
+    localStorage.lastError = `${error}\n${JSON.stringify(info)}`;
   }
 
   //executes when the user clicks on + button
