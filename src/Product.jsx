@@ -33,7 +33,9 @@ export default class Product extends Component {
                 </button>
                 <button
                   className="btn btn-outline-success"
-                  onClick={this.props.onDecrement}
+                  onClick={() => {
+                    this.props.onDecrement(this.state.product);
+                  }}
                 >
                   -
                 </button>
