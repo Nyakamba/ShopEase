@@ -25,7 +25,9 @@ export default class Product extends Component {
               <div className="btn-group">
                 <button
                   className="btn btn-outline-success"
-                  onClick={this.props.onIncrement}
+                  onClick={() => {
+                    this.props.onIncrement(this.state.product);
+                  }}
                 >
                   +
                 </button>
