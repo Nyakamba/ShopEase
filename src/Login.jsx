@@ -21,9 +21,9 @@ export default class Login extends Component {
             }}
           />
         </div>
-        {/*Email ends */}
+        {/*Email ends here */}
 
-        {/*Password starts */}
+        {/*Password starts  here*/}
         <div className="form-group row m-2">
           <label className="col-lg-4">Password</label>
           <input
