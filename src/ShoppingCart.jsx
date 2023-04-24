@@ -107,7 +107,7 @@ export default class ShoppingCart extends Component {
   };
 
   handleDelete = (product) => {
-    //get index of selected product
+    //get index of selected product s
     let allProducts = [...this.state.products];
     let index = allProducts.indexOf(product);
 
