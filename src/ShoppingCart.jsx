@@ -42,6 +42,19 @@ export default class ShoppingCart extends Component {
   //Executes after constructor and render method (includes life cycles of child components, if any) of t current component.
   componentDidMount() {
     //fetch data from data source
+
+    var promise = fetch("http://localhost:5000/products", { method: "GET" });
+    promise.then((response) => {
+      console.log(response);
+
+      var promise2 = response.json();
+      promise2.then((prods) => {
+        console.log(prods);
+
+        this.setState({ products: prods });
+      });
+    });
+
     // console.log("componentDidmount-ShoppingCart");
   }
 
