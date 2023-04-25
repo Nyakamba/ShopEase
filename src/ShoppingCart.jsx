@@ -46,7 +46,10 @@ export default class ShoppingCart extends Component {
     var response = await fetch("http://localhost:5000/products", {
       method: "GET",
     });
-    console.log(response);
+    var prods = await response.json();
+
+    this.setState({ products: prods });
+    console.log(prods);
     // console.log("componentDidmount-ShoppingCart");
   };
 
