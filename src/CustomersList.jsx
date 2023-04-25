@@ -50,7 +50,7 @@ export default class CustomersList extends Component {
         <h4 className="m-1 p-1">
           {this.state.pageTitle}
 
-          <span className="badge badge-secondary m-2">
+          <span className="badge bg-secondary m-2">
             {this.state.customersCount}
           </span>
 
@@ -77,7 +77,7 @@ export default class CustomersList extends Component {
   //Executes when the user clicks on refresh button
   onRefreshClick = () => {
     this.setState({
-      customersCount: 7,
+      customersCount: 6,
     });
   };
 
